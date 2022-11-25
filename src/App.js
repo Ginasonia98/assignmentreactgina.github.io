@@ -56,6 +56,7 @@ function App() {
     });
   };
   const deleteData = (id) => {
+    if (window.confirm(`Delete ID ${id}?`)) {
     Axios({
       method: "post",
       url: `http://localhost:7777/product/delete/${id}`,
@@ -64,6 +65,7 @@ function App() {
       console.log(response);
       getData();
     });
+  }
   };
 
   useEffect(() => {
